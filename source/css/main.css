@@ -1,0 +1,35 @@
+html {
+  min-width: 360px;
+  font-family: fantasy;
+}
+
+h1 {
+  margin: 50px 0;
+  color: #495057;
+  font-family: cursive;
+}
+
+.filter-block {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.filter-panel {
+  box-sizing: border-box;
+  width: fit-content;
+  margin-bottom: 50px;
+}
+
+.search-wrapper {
+  margin: auto;
+  max-width: 500px;
+}
+
+.input-search {
+  border-radius: 5px 0 0 5px;
+}
+
+.button-search {
+  border-radius: 0 5px 5px 0;
+}

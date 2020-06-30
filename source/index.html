@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/main.css">
 
   <title>git search</title>
 </head>
@@ -20,10 +21,11 @@
 
   <main class="container">
 
-    <section class="container text-center d-flex-row">
+    <section class="container text-center">
 
-      <div class="d-flex">
-        <div class="input-group is-invalid">
+      <div class="filter-block">
+
+        <div class="filter-panel filter-panel__sort input-group">
           <div class="input-group-prepend">
             <label class="input-group-text" for="repo-sort">Сортировка по:</label>
           </div>
@@ -34,7 +36,7 @@
           </select>
         </div>
 
-        <div class="input-group is-invalid">
+        <div class="filter-panel filter-panel__count input-group">
           <div class="input-group-prepend">
             <label class="input-group-text" for="repo-quantity">Кол-во Repo на странице:</label>
           </div>
@@ -48,9 +50,9 @@
         </div>
       </div>
 
-      <label class="d-flex">
+      <label class="d-flex search-wrapper">
         <input class="form-control input-search" type="text" placeholder="Введите имя репозитория" />
-        <button type="submit" class="btn btn-info">Найти</button>
+        <button type="submit" class="btn btn-info button-search">Найти</button>
       </label>
 
     </section>

@@ -1,36 +1,91 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>git search</title>
-  </head>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 
-  <body>
-    <h1></h1>
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <title>git search</title>
+</head>
+
+<body>
+
+  <header class="container">
+    <h1 class="text-center">Поиск полезных репозиториев на GIT</h1>
+  </header>
+
+  <main class="container">
+
+    <section class="container text-center d-flex-row">
+
+      <div class="d-flex">
+        <div class="input-group is-invalid">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="repo-sort">Сортировка по:</label>
+          </div>
+          <select class="custom-select" id="repo-sort">
+            <option value="">Умолчанию</option>
+            <option value="star">Количеству звезд</option>
+            <option value="name">Имени репозитория</option>
+          </select>
+        </div>
+
+        <div class="input-group is-invalid">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="repo-quantity">Кол-во Repo на странице:</label>
+          </div>
+          <select class="custom-select" id="repo-quantity">
+            <option value="1">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+      </div>
+
+      <label class="d-flex">
+        <input class="form-control input-search" type="text" placeholder="Введите имя репозитория" />
+        <button type="submit" class="btn btn-info">Найти</button>
+      </label>
+
+    </section>
+  </main>
+
+  <template class="template-table-data">
+    <section class="container">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Repo</th>
+            <th scope="col">User</th>
+          </tr>
+        <tbody>
+          <tr>
+            <th scope="row">#</th>
+            <td>Репо</td>
+            <td>Юзеры</td>
+          </tr>
+        </tbody>
+        </thead>
+      </table>
+    </section>
+  </template>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+</body>
+
 </html>

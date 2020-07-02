@@ -9,6 +9,10 @@ h1 {
   font-family: cursive;
 }
 
+.search-block {
+  margin-bottom: 20px;
+}
+
 .filter-block {
   display: flex;
   justify-content: space-evenly;

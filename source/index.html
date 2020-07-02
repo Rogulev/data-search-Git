@@ -21,8 +21,7 @@
 
   <main class="container">
 
-    <section class="container text-center">
-
+    <section class="container text-center search-block">
       <div class="filter-block">
 
         <div class="filter-panel filter-panel__sort input-group">
@@ -30,8 +29,8 @@
             <label class="input-group-text" for="repo-sort">Сортировка по:</label>
           </div>
           <select class="custom-select" id="repo-sort">
-            <option value="">Умолчанию</option>
-            <option value="star">Количеству звезд</option>
+            <option value="forks" selected>Умолчанию</option>
+            <option value="stars">Количеству звезд</option>
             <option value="name">Имени репозитория</option>
           </select>
         </div>
@@ -41,7 +40,7 @@
             <label class="input-group-text" for="repo-quantity">Кол-во Repo на странице:</label>
           </div>
           <select class="custom-select" id="repo-quantity">
-            <option value="1">10</option>
+            <option value="10">10</option>
             <option value="20">20</option>
             <option value="30">30</option>
             <option value="50">50</option>
@@ -49,34 +48,34 @@
           </select>
         </div>
       </div>
-
       <label class="d-flex search-wrapper">
         <input class="form-control input-search" type="text" placeholder="Введите имя репозитория" />
         <button type="submit" class="btn btn-info button-search">Найти</button>
       </label>
-
     </section>
-  </main>
 
-  <template class="template-table-data">
-    <section class="container">
+    <section class="container section-table" style="display: none;">
       <table class="table">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Repo</th>
-            <th scope="col">User</th>
+            <th scope="col">Stars</th>
+            <th scope="col">Repo name</th>
+            <th scope="col">User name</th>
           </tr>
-        <tbody>
-          <tr>
-            <th scope="row">#</th>
-            <td>Репо</td>
-            <td>Юзеры</td>
-          </tr>
+        <tbody id="body-table">
         </tbody>
         </thead>
       </table>
     </section>
+
+  </main>
+
+  <template id="template-tr">
+    <tr>
+      <th scope="row" class="colNumber"></th>
+      <td class="colRepo"></td>
+      <td class="colUser"></td>
+    </tr>
   </template>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -88,6 +87,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
   </script>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>

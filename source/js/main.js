@@ -45,7 +45,11 @@ const showTable = () => {
   sectionTable.style.display = 'block';
 }
 
-buttonSearch.addEventListener('click', () => {
+// Событие отправки формы
+let searchForm = document.querySelector('#search-form');
+searchForm.addEventListener('submit', (evt) => {
+  evt.preventDefault();
   showTable();
   getSearchResults(`https://api.github.com/search/repositories?q=${inputSearch.value}&per_page=${repoQuantity.value}&sort=${repoSort.value}`)
-});
+
+})

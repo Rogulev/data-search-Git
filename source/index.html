@@ -48,11 +48,9 @@
           </select>
         </div>
       </div>
-      <form id="search-form">
-        <label class="d-flex search-wrapper">
-          <input class="form-control input-search" type="text" placeholder="Введите имя репозитория" />
-          <button type="submit" class="btn btn-info button-search">Найти</button>
-        </label>
+      <form id="search-form" class="d-flex search-wrapper">
+        <input class="form-control input-search" type="text" placeholder="Введите имя репозитория" />
+        <button type="submit" class="btn btn-info button-search">Найти</button>
       </form>
     </section>
 
@@ -63,10 +61,11 @@
             <th scope="col">Stars</th>
             <th scope="col">Repo name</th>
             <th scope="col">User name</th>
+            <th scope="col" class="col-avatar">Avatar</th>
           </tr>
+        </thead>
         <tbody id="body-table">
         </tbody>
-        </thead>
       </table>
     </section>
 
@@ -77,6 +76,7 @@
       <th scope="row" class="colNumber"></th>
       <td class="colRepo"></td>
       <td class="colUser"></td>
+      <td class="avatar"></td>
     </tr>
   </template>
 

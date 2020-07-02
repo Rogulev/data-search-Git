@@ -37,3 +37,22 @@ h1 {
 .button-search {
   border-radius: 0 5px 5px 0;
 }
+
+#body-table tr:hover{
+  cursor: pointer;
+  background-color: #e9ecef;
+}
+
+.avatar img{
+  width: 25px;
+  height: 25px;
+}
+
+.col-avatar {
+  width: 75px;
+  text-align: center;
+}
+
+.avatar {
+  text-align: center;
+}

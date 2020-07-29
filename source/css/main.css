@@ -9,6 +9,16 @@ h1 {
   font-family: cursive;
 }
 
+a,
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
 .search-block {
   margin-bottom: 20px;
 }
@@ -38,21 +48,82 @@ h1 {
   border-radius: 0 5px 5px 0;
 }
 
-#body-table tr:hover{
+#body-table tr:hover,
+#body-table tr:focus {
   cursor: pointer;
   background-color: #e9ecef;
+  transition: 0.3s;
 }
 
-.avatar img{
+.colAvatar img {
   width: 25px;
   height: 25px;
 }
 
-.col-avatar {
+.colAvatar {
   width: 75px;
   text-align: center;
 }
 
 .avatar {
   text-align: center;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.user-avatar {
+  width: 50%;
+}
+
+.all-repo {
+  width: 50%;
+}
+
+.user-avatar img {
+  width: 75%;
+  display: block;
+  margin: 0 0 0 auto;
+}
+
+#exampleModalLabel {
+  color: #495057;
+}
+
+.main-repo {
+  font-weight: 600;
+  font-style: italic;
+
+}
+
+#exampleModal a {
+  color: #495057;
+  position: relative;
+}
+
+#exampleModal a:hover {
+  color: #17a2b8;
+}
+
+#exampleModal a::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #495057;
+  transition: 0.5s;
+}
+
+#exampleModal a:hover::after {
+  background-color: #17a2b8;
+  width: 100%;
+}
+
+.info-list li {
+  margin-bottom: 10px;
 }

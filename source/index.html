@@ -29,8 +29,8 @@
             <label class="input-group-text" for="repo-sort">Сортировка по:</label>
           </div>
           <select class="custom-select" id="repo-sort">
-            <option value="forks" selected>Умолчанию</option>
-            <option value="stars">Количеству звезд</option>
+            <option value="stars" selected>Количеству звезд</option>
+            <option value="forks">Количеству форков</option>
             <option value="name">Имени репозитория</option>
           </select>
         </div>
@@ -69,16 +69,43 @@
       </table>
     </section>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><a href="#"></a></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="all-repo">
+              <p class="main-repo"><a href="#"></a></p>
+              <ul class="info-list">
+              </ul>
+            </div>
+            <div class="user-avatar"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <template id="template-tr">
-    <tr>
+    <tr tabindex="1" class="tr-repo-info" data-toggle="modal" data-target="#exampleModal">
       <th scope="row" class="colNumber"></th>
       <td class="colRepo"></td>
       <td class="colUser"></td>
-      <td class="avatar"></td>
+      <td class="colAvatar"></td>
     </tr>
   </template>
+
+
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">

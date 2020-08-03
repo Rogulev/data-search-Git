@@ -19,8 +19,32 @@ ul {
   list-style: none;
 }
 
+.error-section div {
+  display: flex;
+  text-align: center;
+  margin: auto;
+  max-width: 500px;
+}
+
+.error-section p{
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.table .thead-dark th {
+  border-top: none;
+}
+
+.table .thead-dark th:first-child {
+  border-top-left-radius: 5px;
+}
+
+.table .thead-dark th:last-child {
+  border-top-right-radius: 5px;
+}
+
 .search-block {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .filter-block {
@@ -124,6 +148,7 @@ ul {
   width: 100%;
 }
 
-.info-list li {
+.details__item {
+  color: #495057;
   margin-bottom: 10px;
 }

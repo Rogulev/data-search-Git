@@ -69,20 +69,55 @@
       </table>
     </section>
 
+    <section class="error-section" style="display: none;">
+      <div class="alert alert-warning" role="alert">
+        <p>По вашему запросу ничего не найдено, попробуйте найти другой репозиторий!</p>
+      </div>
+    </section>
+
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"><a href="#"></a></h5>
+            <h5 class="modal-title" id="exampleModalLabel">
+              <a href="#">
+                <svg width="20" height="20">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icon.svg#repo-icon"></use>
+                </svg>:
+                <span></span>
+              </a>
+            </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <div class="all-repo">
-              <p class="main-repo"><a href="#"></a></p>
-              <ul class="info-list">
+              <p class="main-repo">
+                <a href="#">
+                  <svg width="20" height="20">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icon.svg#person-icon"></use>
+                  </svg>
+                  <span></span>
+                </a>
+              </p>
+              <ul class="details__list">
+                <li class="details__item details__icon details__icon--forks">
+                  <svg width="20" height="20">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icon.svg#fork-icon"></use>
+                  </svg> <span></span>
+                </li>
+                <li class="details__item details__icon details__icon--stars">
+                  <svg width="20" height="20">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icon.svg#star-icon"></use>
+                  </svg> <span></span>
+                </li>
+                <li class="details__item details__icon details__icon--language">
+                  <svg width="20" height="20">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="images/icon.svg#lang-icon"></use>
+                  </svg> <span></span>
+                </li>
               </ul>
             </div>
             <div class="user-avatar"></div>
@@ -117,6 +152,7 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
   </script>
 
+  <script src="js/colorsLang.js"></script>
   <script src="js/main.js"></script>
 </body>
 

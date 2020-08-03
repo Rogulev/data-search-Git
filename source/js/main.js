@@ -27,36 +27,45 @@ function getSearchResults(url) {
   xhr.addEventListener('load', () => {
     const results = JSON.parse(xhr.responseText).items;
     const fragment = document.createDocumentFragment();
-    showTable();
 
-    results.forEach(data => {
-      const row = templateTr.cloneNode(true);
-      const numRepo = row.querySelector('.colNumber');
-      const repoTable = row.querySelector('.colRepo');
-      const userTable = row.querySelector('.colUser');
-      const avatar = row.querySelector('.colAvatar');
+    if (results.length <= 0) {
+      $('.section-table').hide();
+      $('.error-section').show();
+    } else {
+      $('.error-section').hide();
+      showTable();
 
-      const stars = data.stargazers_count;
-      const repoName = data.name;
-      const userName = data.owner.login;
-      const userId = data.owner.id;
-      const userURL = data.owner.html_url;
-      const repoURL = data.html_url;
-      const forks = data.forks;
-      const lang = data.language;
+      results.forEach(data => {
+        const row = templateTr.cloneNode(true);
+        const numRepo = row.querySelector('.colNumber');
+        const repoTable = row.querySelector('.colRepo');
+        const userTable = row.querySelector('.colUser');
+        const avatar = row.querySelector('.colAvatar');
 
-      numRepo.textContent = stars;
-      repoTable.textContent = repoName;
-      userTable.textContent = userName;
-      avatar.innerHTML = `<img src=https://avatars3.githubusercontent.com/u/${userId}?v=4>`;
+        const repoInfo = {
+          repoName: data.name,
+          stars: data.stargazers_count,
+          userName: data.owner.login,
+          userId: data.owner.id,
+          userURL: data.owner.html_url,
+          repoURL: data.html_url,
+          forks: data.forks,
+          lang: data.language
+        }
 
-      row.addEventListener('click', () =>
-        openModal(userName, repoName, userId, repoURL, forks, lang, userURL));
+        numRepo.textContent = repoInfo.stars;
+        repoTable.textContent = repoInfo.repoName;
+        userTable.textContent = repoInfo.userName;
+        avatar.innerHTML = `<img src=https://avatars3.githubusercontent.com/u/${repoInfo.userId}?v=4>`;
 
-      fragment.append(row)
-    });
+        row.addEventListener('click', () =>
+          openModal(repoInfo));
 
-    document.querySelector('#body-table').append(fragment)
+        fragment.append(row)
+      });
+
+      document.querySelector('#body-table').append(fragment)
+    };
   })
 }
 
@@ -67,13 +76,26 @@ searchForm.addEventListener('submit', (evt) => {
   getSearchResults(`https://api.github.com/search/repositories?q=${inputSearch.value}&per_page=${repoQuantity.value}&sort=${repoSort.value}`);
 });
 
-const openModal = (userName, repoName, userId, repoURL, forks, lang, userURL) => {
+const openModal = ({
+  repoName,
+  stars,
+  userName,
+  userId,
+  userURL,
+  repoURL,
+  forks,
+  lang
+}) => {
   $('#exampleModal').modal('show');
-  $('#exampleModalLabel a').text(`User name: ${userName}`)
-    .attr('href', `${userURL}`);
-  $('.main-repo a').text(`Repo name: ${repoName}`)
-    .attr('href', `${repoURL}`);
+  $('#exampleModalLabel a  span').text(repoName);
+  $('#exampleModalLabel a').attr('href', userURL);
+  $('.main-repo a  span').text(userName);
+  $('.main-repo a').attr('href', repoURL);
   $('.user-avatar').html(`<img src=https://avatars3.githubusercontent.com/u/${userId}?v=4>`);
-  $('.info-list').empty().append(`<li>Forks: ${forks}</li>`)
-    .append(`<li>Language: ${lang}</li>`);
+  $('.details__icon--forks span').text(forks);
+  $('.details__icon--stars span').text(stars);
+  $('.details__icon--language svg').attr('fill', langColors[lang]);
+  $('.details__icon--language span').text(lang);
 };
+
+

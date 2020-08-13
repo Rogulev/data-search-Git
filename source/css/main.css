@@ -59,7 +59,7 @@ ul {
 
 .filter-panel {
   box-sizing: border-box;
-  width: fit-content;
+  width: auto;
   margin-bottom: 50px;
 }
 
